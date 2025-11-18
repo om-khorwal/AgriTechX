@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   description: "Modern agri technology landing page — AgriTechX",
   // Add favicon and apple touch icon here. Place these files in /public
   icons: {
-    icon: "/favicon.ico", // standard
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/l.png", // standard
+    shortcut: "/l.png",
+    apple: "/l.png",
   },
   // Optionally set theme color for mobile chrome
   themeColor: [
