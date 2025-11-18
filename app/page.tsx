@@ -1,11 +1,7 @@
+// app/page.tsx
 "use client";
 
 import React from "react";
-import Image from "next/image";
-
-// Landing page component (single-file) for Next.js + TailwindCSS
-// Paste this as `app/page.tsx` (or a component in your pages/app) in a Next.js project
-// Requires TailwindCSS configured. Uses external images from Unsplash — replace with your own if required.
 
 export default function LandingPage() {
   return (
@@ -13,15 +9,15 @@ export default function LandingPage() {
       {/* NAV */}
       <nav className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-600 to-emerald-400 flex items-center justify-center shadow-md">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-green-600 to-emerald-400 flex items-center justify-center shadow-md">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 12c0 4.418 3.582 8 8 8s8-3.582 8-8" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M8 12L12 8l4 4" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
           <div>
-            <h1 className="font-bold text-lg">AgriTechX</h1>
-            <p className="text-xs text-gray-600 -mt-1">Modern farming. Smarter yields.</p>
+            <h1 className="font-bold text-base sm:text-lg lg:text-xl">AgriTechX</h1>
+            <p className="text-xs text-gray-600 -mt-0.5">Modern farming. Smarter yields.</p>
           </div>
         </div>
 
@@ -39,43 +35,48 @@ export default function LandingPage() {
       </nav>
 
       {/* HERO */}
-      <section className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">Technology-driven agriculture that grows with you</h2>
-          <p className="text-lg text-gray-700 max-w-xl">From precision sensors and AI-driven crop insights to marketplace-ready produce — we combine modern tech and sustainable farming practices to increase yield and profitability.</p>
+      <section className="max-w-7xl mx-auto px-6 py-10 sm:py-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+        <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">Technology-driven agriculture that grows with you</h2>
+          <p className="text-md sm:text-lg md:text-lg text-gray-700 max-w-xl">From precision sensors and AI-driven crop insights to marketplace-ready produce — we combine modern tech and sustainable farming practices to increase yield and profitability.</p>
 
-          <div className="flex gap-4 items-center flex-wrap">
-            <a href="#contact" className="px-6 py-3 rounded-md bg-gradient-to-r from-green-600 to-emerald-400 text-white font-semibold shadow-lg">Talk to an expert</a>
-            <a href="#features" className="px-6 py-3 rounded-md border border-green-200 text-green-700 font-medium">Explore features</a>
+          <div className="flex gap-3 items-center flex-wrap">
+            <a href="#contact" className="px-5 py-3 rounded-md bg-gradient-to-r from-green-600 to-emerald-400 text-white font-semibold shadow-lg text-sm sm:text-base">Talk to an expert</a>
+            <a href="#features" className="px-4 py-3 rounded-md border border-green-200 text-green-700 font-medium text-sm sm:text-base">Explore features</a>
           </div>
 
-          <div className="mt-4 grid grid-cols-3 gap-3 max-w-sm">
+          <div className="mt-4 grid grid-cols-3 sm:grid-cols-3 gap-3 max-w-sm">
             <Stat label="Sensors deployed" value="1.2K+" />
             <Stat label="Farmers helped" value="8,400+" />
             <Stat label="Avg yield increase" value="27%" />
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative order-first md:order-last">
           <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60" alt="smart-farm" className="w-full h-80 object-cover" />
+            <img
+              src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60"
+              alt="smart-farm"
+              className="w-full h-64 sm:h-80 md:h-96 lg:h-[520px] object-cover"
+              loading="lazy"
+            />
           </div>
 
-          <div className="absolute -bottom-6 left-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 w-72">
-            <h4 className="font-semibold">Field Monitor</h4>
-            <p className="text-sm text-gray-600 mt-1">Soil moisture: <strong>32%</strong> · Temp: <strong>26°C</strong></p>
+          <div className="absolute -bottom-6 left-6 sm:left-8 md:left-10 lg:left-12 bg-white p-3 sm:p-4 rounded-xl shadow-xl border border-gray-100 w-64 sm:w-72 md:w-80 lg:w-96">
+            <h4 className="font-semibold text-sm sm:text-base">Field Monitor</h4>
+            <p className="text-xs sm:text-sm text-gray-600 mt-1">Soil moisture: <strong>32%</strong> · Temp: <strong>26°C</strong></p>
             <div className="mt-3 bg-gray-100 h-2 rounded-full overflow-hidden">
-              <div style={{ width: '32%' }} className="h-2 bg-green-500" />
+              <div style={{ width: "32%" }} className="h-2 bg-green-500" />
             </div>
           </div>
         </div>
       </section>
 
       {/* SECTION: FEATURES (scroll 1 end) */}
-      <section id="features" className="max-w-7xl mx-auto px-6 py-14">
+      <section id="features" className="max-w-7xl mx-auto px-6 py-10 sm:py-14">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold">Built for modern farms</h3>
+          <div className="space-y-4 sm:space-y-6">
+            <h3 className="text-2xl sm:text-3xl font-bold">Built for modern farms</h3>
             <p className="text-gray-700 max-w-xl">AgriTechX bundles hardware, data, and actionable insights into one platform. Visualize farm health, predict irrigation needs, and connect directly with buyers.</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
@@ -87,9 +88,9 @@ export default function LandingPage() {
           </div>
 
           <div>
-            <div className="bg-white shadow-lg rounded-2xl p-6">
+            <div className="bg-white shadow-lg rounded-2xl p-5 sm:p-6">
               <h4 className="font-semibold">Live Farm Snapshot</h4>
-              <div className="mt-4 grid grid-cols-2 gap-4">
+              <div className="mt-4 grid grid-cols-2 gap-3">
                 <MiniCard label="Soil Moisture" value="32%" />
                 <MiniCard label="pH" value="6.5" />
                 <MiniCard label="Temp" value="26°C" />
@@ -97,7 +98,7 @@ export default function LandingPage() {
               </div>
 
               <div className="mt-6">
-                <img src="https://images.unsplash.com/photo-1503384314-8f0a6dfc1d5d?auto=format&fit=crop&w=900&q=60" alt="drone" className="w-full h-44 object-cover rounded-md" />
+                <img src="https://images.unsplash.com/photo-1503384314-8f0a6dfc1d5d?auto=format&fit=crop&w=900&q=60" alt="drone" className="w-full h-44 sm:h-56 object-cover rounded-md" />
               </div>
             </div>
           </div>
@@ -105,11 +106,11 @@ export default function LandingPage() {
       </section>
 
       {/* SECTION: DIAGRAMS & SOLUTIONS (scroll 2 start) */}
-      <section id="diagram" className="max-w-7xl mx-auto px-6 py-16">
-        <h3 className="text-3xl font-bold text-center">How it works — end-to-end</h3>
+      <section id="diagram" className="max-w-7xl mx-auto px-6 py-10 sm:py-16">
+        <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold text-center">How it works — end-to-end</h3>
         <p className="text-center text-gray-600 mt-2 max-w-2xl mx-auto">Sensors, satellite & drone imagery feed into cloud analytics. Models create field-level prescriptions and a marketplace connects buyers to harvests.</p>
 
-        <div className="mt-10 grid md:grid-cols-3 gap-8 items-start">
+        <div className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
           <DiagramCard
             title="Data Collection"
             description="Sensors, drones and satellites collect high-frequency data from the field."
@@ -124,27 +125,28 @@ export default function LandingPage() {
 
           <DiagramCard
             title="Action & Market"
-            description="Automated irrigation, targeted inputs, and direct-to-buyer marketplace." 
+            description="Automated irrigation, targeted inputs, and direct-to-buyer marketplace."
             svg={MarketSVG}
           />
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-green-50 to-white p-8 rounded-2xl shadow-inner">
-          <h4 className="font-semibold text-xl">Ready to modernize your farm?</h4>
+        <div className="mt-8 sm:mt-12 bg-gradient-to-r from-green-50 to-white p-6 sm:p-8 rounded-2xl shadow-inner">
+          <h4 className="font-semibold text-lg sm:text-xl">Ready to modernize your farm?</h4>
           <p className="text-gray-700 mt-2">Start with a free farm assessment — our experts will prepare a prioritized plan for sensors, irrigation and crop management.</p>
-          <div className="mt-4 flex gap-4">
-            <a href="#contact" className="px-6 py-3 rounded-md bg-green-600 text-white font-semibold">Request assessment</a>
-            <a href="#contact" className="px-6 py-3 rounded-md border border-green-200 text-green-700">Contact Sales</a>
+          <div className="mt-4 flex gap-3">
+            <a href="#contact" className="px-5 py-3 rounded-md bg-green-600 text-white font-semibold">Request assessment</a>
+            <a href="#contact" className="px-5 py-3 rounded-md border border-green-200 text-green-700">Contact Sales</a>
           </div>
         </div>
       </section>
 
       {/* CONTACT + FOOTER */}
-      <footer id="contact" className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
+      <footer id="contact" className="max-w-7xl mx-auto px-6 py-8 sm:py-12">
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
           <div>
             <h5 className="font-bold">Get in touch</h5>
-            <p className="text-gray-600 mt-2">Email: hello@agritechx.com · Phone: +91 98765 43210</p>
+            <p className="text-gray-600 mt-2">Email: hello@agritechx.com</p>
+            <p className="text-gray-600 mt-2">Phone: +91 98765 43210</p>
             <div className="mt-4 flex gap-2">
               <a className="text-sm text-gray-500">Privacy</a>
               <a className="text-sm text-gray-500">Terms</a>
@@ -171,16 +173,13 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="mt-8 text-center text-gray-500">© {new Date().getFullYear()} AgriTechX — Built with ❤️ for modern farming</div>
+        <div className="mt-6 text-center text-gray-500">© {new Date().getFullYear()} AgriTechX — Built with ❤️ from TheOKcompany</div>
       </footer>
-
     </main>
   );
 }
 
-
 /* ----------------- Small components used above ----------------- */
-
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="bg-white/60 rounded-lg px-3 py-2 shadow-sm">
@@ -192,9 +191,9 @@ function Stat({ label, value }: { label: string; value: string }) {
 
 function FeatureCard({ title, desc, icon }: { title: string; desc: string; icon: React.FC }) {
   return (
-    <div className="flex gap-4 items-start p-4 rounded-lg bg-white shadow-sm">
-      <div className="w-12 h-12 flex items-center justify-center rounded-md bg-green-50">
-        <div className="w-8 h-8">{React.createElement(icon)}</div>
+    <div className="flex gap-4 items-start p-3 sm:p-4 rounded-lg bg-white shadow-sm">
+      <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-md bg-green-50">
+        <div className="w-6 h-6 sm:w-8 sm:h-8">{React.createElement(icon)}</div>
       </div>
       <div>
         <div className="font-semibold">{title}</div>
@@ -215,8 +214,8 @@ function MiniCard({ label, value }: { label: string; value: string }) {
 
 function DiagramCard({ title, description, svg }: { title: string; description: string; svg: React.FC }) {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
-      <div className="w-full h-44 flex items-center justify-center mb-4">
+    <div className="bg-white rounded-2xl p-4 sm:p-6 shadow hover:shadow-lg transition">
+      <div className="w-full h-32 sm:h-44 flex items-center justify-center mb-3">
         {React.createElement(svg)}
       </div>
       <div className="font-semibold">{title}</div>
